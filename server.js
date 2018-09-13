@@ -2,12 +2,13 @@ var express = require('express')
 var app = express();
 var path = require('path');
 var controllers = require('./controllers')
-app.use(controllers)
 var bodyParser = require("body-parser")
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+app.use(controllers)
+
 //get is getting something
 //app.get is a route
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(bodyParser.json())
 //this will use whatever is in the public folder__static stuff like css
 app.use(express.static(path.join(__dirname,'public')));
 //this will use whatever is in views folder

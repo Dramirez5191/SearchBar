@@ -6,9 +6,9 @@ res.render("results.ejs")
 });
 
 
-router.post('/',function (req , res){
-  console.log(req.body)
-  res.redirect('/results')
+router.post('/',(req,res)=>{
+  console.log(req.body.userInput)
+//  res.redirect('/results')
 });
 
 
